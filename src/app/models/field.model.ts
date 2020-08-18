@@ -1,12 +1,28 @@
 import { ValidatorFn } from '@angular/forms';
 
-export type FieldType = 'INPUT' | 'TEXTAREA';
+export enum FieldType {
+  input = 'INPUT',
+  textarea = 'TEXTAREA',
+  select = 'SELECT',
+  radio = 'RADIO',
+  checkbox = 'CHECKBOX',
+}
 
-export interface Field {
+export type AttributeName = 'placeholder' | 'type' | 'required' | 'min' | 'max' | 'rows';
+
+export class FieldAttribute {
+  name: AttributeName;
+  value: string | number | boolean;
+}
+
+export class Field {
   type: FieldType;
   name: string;
+  disabled?: boolean;
+  classes?: string;
+  id?: string;
   label?: string;
-  placeholder?: string;
   validator?: ValidatorFn[];
-  attrs?: any;
+  attrs?: FieldAttribute[];
+  options?: any[];
 }

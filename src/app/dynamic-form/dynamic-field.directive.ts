@@ -12,15 +12,18 @@ import { FormGroup } from '@angular/forms';
 
 import { InputComponent } from './fields/input/input.component';
 import { TextareaComponent } from './fields/textarea/textarea.component';
-import { Field } from '../models';
+import { Field, FieldType } from '../models';
+import { SelectComponent } from './fields/select/select.component';
 
 const componentsMapper: { [key: string]: Type<any> } = {
-  INPUT: InputComponent,
-  TEXTAREA: TextareaComponent,
+  [FieldType.input]: InputComponent,
+  [FieldType.textarea]: TextareaComponent,
+  [FieldType.select]: SelectComponent,
 };
 
 @Directive({
-  selector: '[appDynamicField]',
+  // tslint:disable-next-line:directive-selector
+  selector: '[dynamicField]',
 })
 export class DynamicFieldDirective implements OnInit, OnChanges {
   @Input() field: Field;

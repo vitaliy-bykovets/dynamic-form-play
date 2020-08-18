@@ -1,0 +1,12 @@
+<fieldset [formGroup]="group" class="form-group">
+  <label *ngIf="field.label" [attr.for]="field?.id || field?.name">{{ field.label }}</label>
+  <select class="form-control form-control-lg"
+          [formControlName]="field?.name"
+          [id]="field?.id || field?.name"
+          [ngClass]="field?.classes"
+          [dynamicFieldAttributes]="field?.attrs">
+    <option *ngFor="let option of field?.options" [value]="option.value">
+      {{ option.description || option.value }}
+    </option>
+  </select>
+</fieldset>

@@ -1,35 +1,59 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators } from '@angular/forms';
 import { Observable, of } from 'rxjs';
-import { Field } from './models';
+import { Field, FieldType } from './models';
 
 const structure: Field[] = [
   {
-    type: 'INPUT',
-    name: 'email',
-    placeholder: 'Username',
-    validator: [Validators.required],
-  },
-  {
-    type: 'INPUT',
-    name: 'password',
-    placeholder: 'Password',
-    validator: [Validators.required],
-    attrs: {
-      type: 'password',
-    },
-  },
-  {
-    type: 'TEXTAREA',
+    type: FieldType.textarea,
     name: 'comment',
-    placeholder: 'Your comment here',
-    validator: [],
+    attrs: [
+      { name: 'placeholder', value: 'Your comment here'},
+    ]
+  },
+  {
+    type: FieldType.input,
+    validator: [Validators.required],
+    name: 'password',
+    attrs: [
+      { name: 'placeholder', value: 'Password'},
+      { name: 'type', value: 'password'},
+      { name: 'required', value: true},
+    ],
+  },
+  {
+    type: FieldType.input,
+    validator: [Validators.required],
+    name: 'email',
+    attrs: [
+      { name: 'placeholder', value: 'Username'}
+    ]
+  },
+  {
+    type: FieldType.select,
+    validator: [Validators.required],
+    name: 'select',
+    label: 'With label',
+    attrs: [
+      { name: 'placeholder', value: 'Select'}
+    ],
+    options: [
+      {
+        value: 'text',
+        description: 'Text'
+      },
+      {
+        value: 12345,
+        description: 'Number'
+      }
+    ]
   },
 ];
 
 const data = {
   email: 'Test',
-  comment: 'Test comment'
+  comment: 'Test comment',
+  select: 12345
 };
 
 @Component({
@@ -44,5 +68,9 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.structure$ = of(structure);
     this.data$ = of(data);
+  }
+
+  updateForm(e) {
+    console.log('********* - 50', e)
   }
 }

@@ -1,9 +1,11 @@
 <fieldset [formGroup]="group" class="form-group">
+  <label *ngIf="field.label" [attr.for]="field?.id || field?.name">{{ field.label }}</label>
   <textarea
     class="form-control form-control-lg"
-    [attr.rows]="field?.attrs?.rows || 5"
     [formControlName]="field?.name"
-    [attr.placeholder]="field?.placeholder"
+    [id]="field?.id || field?.name"
+    [ngClass]="field?.classes"
+    [dynamicFieldAttributes]="field?.attrs"
   >
   </textarea>
 </fieldset>

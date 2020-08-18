@@ -64,7 +64,7 @@ export class DynamicFormComponent implements OnInit, OnDestroy {
   private listenFormChanges(form: FormGroup) {
     form.valueChanges
       .pipe(
-        debounceTime(100),
+        debounceTime(300),
         takeUntil(this.unsubscribe$),
       )
       .subscribe((changes: any) => this.updateForm.emit(changes));

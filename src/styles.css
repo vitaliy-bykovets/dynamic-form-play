@@ -1,1 +1,52 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  font-family: Arial, sans-serif;
+}
+
+main {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+fieldset {
+  border: none;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+input,
+textarea {
+  padding: 8px;
+  border: 1px solid #ced4da;
+  border-radius: 3px;
+  background-color: #f8f9fa;
+  color: #495057;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  box-sizing: border-box;
+}
+
+form fieldset {
+  margin-bottom: 18px;
+}
+
+select {
+  background-color: #f8f9fa;
+  color: #495057;
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ced4da;
+  border-radius: 3px;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  box-sizing: border-box;
+}
+
+label {
+  font-size: 12px;
+  margin-bottom: 5px;
+  display: block;
+  color: #495057;
+}
+
