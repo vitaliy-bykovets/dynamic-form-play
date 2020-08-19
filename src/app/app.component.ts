@@ -5,13 +5,6 @@ import { Field, FieldType } from './models';
 
 const structure: Field[] = [
   {
-    type: FieldType.textarea,
-    name: 'comment',
-    attrs: [
-      { name: 'placeholder', value: 'Your comment here'},
-    ]
-  },
-  {
     type: FieldType.input,
     validator: [Validators.required],
     name: 'password',
@@ -25,8 +18,36 @@ const structure: Field[] = [
     type: FieldType.input,
     validator: [Validators.required],
     name: 'email',
+    disabled: true,
     attrs: [
       { name: 'placeholder', value: 'Username'}
+    ]
+  },
+
+  {
+    type: FieldType.radio,
+    validator: [Validators.required],
+    name: 'radioAlone',
+    label: 'Standalone radio'
+  },
+
+  {
+    type: FieldType.radio,
+    validator: [Validators.required],
+    name: 'radio',
+    options: [
+      {
+        value: 'radio_1',
+        description: 'Radio 1'
+      },
+      {
+        value: 'radio_2',
+        description: 'Radio 2'
+      },
+      {
+        value: 'radio_3',
+        description: 'Radio 3'
+      }
     ]
   },
   {
@@ -47,6 +68,18 @@ const structure: Field[] = [
         description: 'Number'
       }
     ]
+  },
+  {
+    type: FieldType.textarea,
+    name: 'comment',
+    attrs: [
+      { name: 'placeholder', value: 'Your comment here'},
+    ]
+  },
+  {
+    type: FieldType.checkbox,
+    name: 'checkbox',
+    label: 'Checkbox'
   },
 ];
 

@@ -8,7 +8,7 @@ export enum FieldType {
   checkbox = 'CHECKBOX',
 }
 
-export type AttributeName = 'placeholder' | 'type' | 'required' | 'min' | 'max' | 'rows';
+export type AttributeName = 'placeholder' | 'type' | 'required' | 'min' | 'max' | 'rows' | 'size' | 'maxlength' | 'multiple' | 'step';
 
 export class FieldAttribute {
   name: AttributeName;

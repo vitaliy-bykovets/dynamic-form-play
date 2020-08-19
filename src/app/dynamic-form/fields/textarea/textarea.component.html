@@ -6,6 +6,6 @@
     [id]="field?.id || field?.name"
     [ngClass]="field?.classes"
     [dynamicFieldAttributes]="field?.attrs"
-  >
+    [disableControl]="field?.disabled">
   </textarea>
 </fieldset>

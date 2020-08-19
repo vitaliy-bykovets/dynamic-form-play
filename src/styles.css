@@ -15,7 +15,8 @@ fieldset {
 }
 
 input,
-textarea {
+textarea,
+select {
   padding: 8px;
   border: 1px solid #ced4da;
   border-radius: 3px;
@@ -25,22 +26,23 @@ textarea {
   font-family: Arial, sans-serif;
   font-size: 12px;
   box-sizing: border-box;
+}
+
+input[disabled],
+textarea[disabled],
+select[disabled] {
+  border-color: #e9ebec;
+  background-color: #fdfdfd;
+  color: #b3b3b3;
+}
+
+input[type=checkbox] {
+  width: auto;
+  margin: 0;
 }
 
 form fieldset {
   margin-bottom: 18px;
-}
-
-select {
-  background-color: #f8f9fa;
-  color: #495057;
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #ced4da;
-  border-radius: 3px;
-  font-family: Arial, sans-serif;
-  font-size: 12px;
-  box-sizing: border-box;
 }
 
 label {

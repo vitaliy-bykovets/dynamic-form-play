@@ -1,1 +1,11 @@
-<p>checkbox works!</p>
+<fieldset [formGroup]="group" class="form-group">
+  <input
+    class="form-control"
+    type="checkbox"
+    [formControlName]="field?.name"
+    [id]="field?.id || field?.name"
+    [ngClass]="field?.classes"
+    [dynamicFieldAttributes]="field?.attrs"
+    [disableControl]="field?.disabled">
+  <label *ngIf="field.label" [attr.for]="field?.id || field?.name">{{ field.label }}</label>
+</fieldset>

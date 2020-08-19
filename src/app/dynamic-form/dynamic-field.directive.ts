@@ -9,8 +9,10 @@ import {
   ViewContainerRef,
 } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { CheckboxComponent } from './fields/checkbox/checkbox.component';
 
 import { InputComponent } from './fields/input/input.component';
+import { RadioComponent } from './fields/radio/radio.component';
 import { TextareaComponent } from './fields/textarea/textarea.component';
 import { Field, FieldType } from '../models';
 import { SelectComponent } from './fields/select/select.component';
@@ -19,6 +21,8 @@ const componentsMapper: { [key: string]: Type<any> } = {
   [FieldType.input]: InputComponent,
   [FieldType.textarea]: TextareaComponent,
   [FieldType.select]: SelectComponent,
+  [FieldType.radio]: RadioComponent,
+  [FieldType.checkbox]: CheckboxComponent,
 };
 
 @Directive({

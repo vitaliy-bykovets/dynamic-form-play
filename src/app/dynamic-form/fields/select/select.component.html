@@ -4,7 +4,8 @@
           [formControlName]="field?.name"
           [id]="field?.id || field?.name"
           [ngClass]="field?.classes"
-          [dynamicFieldAttributes]="field?.attrs">
+          [dynamicFieldAttributes]="field?.attrs"
+          [disableControl]="field?.disabled">
     <option *ngFor="let option of field?.options" [value]="option.value">
       {{ option.description || option.value }}
     </option>

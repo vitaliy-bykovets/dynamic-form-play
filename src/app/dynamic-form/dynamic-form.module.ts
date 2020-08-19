@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DisableControlDirective } from './disable-control.directive';
 import { DynamicFieldDirective } from './dynamic-field.directive';
 import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
 import { InputComponent } from './fields/input/input.component';
@@ -15,6 +16,7 @@ import { CheckboxComponent } from './fields/checkbox/checkbox.component';
     DynamicFormComponent,
     DynamicFieldDirective,
     DynamicFieldAttributesDirective,
+    DisableControlDirective,
     InputComponent,
     TextareaComponent,
     SelectComponent,
@@ -26,7 +28,7 @@ import { CheckboxComponent } from './fields/checkbox/checkbox.component';
     FormsModule,
     ReactiveFormsModule,
   ],
-  entryComponents: [InputComponent, TextareaComponent, SelectComponent],
+  entryComponents: [InputComponent, TextareaComponent, SelectComponent, RadioComponent, CheckboxComponent],
   exports: [DynamicFormComponent]
 })
 export class DynamicFormModule { }

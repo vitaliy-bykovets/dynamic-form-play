@@ -1,1 +1,27 @@
-<p>radio works!</p>
+<fieldset [formGroup]="group" class="form-group">
+  <ng-container *ngIf="field?.options; else aloneRadio">
+    <ng-container *ngFor="let option of field?.options">
+      <input
+        class="form-control"
+        type="radio"
+        [formControlName]="field?.name"
+        [id]="field?.id + '_' + option.value || field?.name + '_' + option.value"
+        [ngClass]="field?.classes"
+        [dynamicFieldAttributes]="field?.attrs"
+        [disableControl]="field?.disabled"
+        [value]="option.value">
+      <label [attr.for]="field?.id + '_' + option.value || field?.name + '_' + option.value">{{ option.description }}</label>
+    </ng-container>
+  </ng-container>
+  <ng-template #aloneRadio>
+    <input
+      class="form-control"
+      type="radio"
+      [formControlName]="field?.name"
+      [id]="field?.id || field?.name"
+      [ngClass]="field?.classes"
+      [dynamicFieldAttributes]="field?.attrs"
+      [disableControl]="field?.disabled">
+    <label *ngIf="field.label" [attr.for]="field?.id || field?.name">{{ field.label }}</label>
+  </ng-template>
+</fieldset>
