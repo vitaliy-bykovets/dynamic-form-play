@@ -1,7 +1,10 @@
 <h3>Dynamic form</h3>
 
-<app-dynamic-form (updateForm)="updateForm($event)"
-                  [data$]="data$"
-                  [structure$]="structure$">
-</app-dynamic-form>
+<div class="form-container">
+  <app-dynamic-form (updateForm)="updateForm($event)"
+                    [data$]="data$"
+                    [structure$]="structure$">
+  </app-dynamic-form>
+  <button type="submit" (click)="sendForm()">Save</button>
+</div>
 

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, HostBinding, Input } from '@angular/core';
 import { Field } from '../../../models';
 import { FormGroup } from '@angular/forms';
 
@@ -8,6 +8,9 @@ import { FormGroup } from '@angular/forms';
   styleUrls: ['./select.component.css']
 })
 export class SelectComponent {
+  @HostBinding('class.col-2') get getColTwo() {
+    return this.field?.layout?.columnSpan === 2;
+  }
   @Input() field: Field;
   @Input() group: FormGroup;
 }

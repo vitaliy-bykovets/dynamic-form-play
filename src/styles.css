@@ -52,3 +52,17 @@ label {
   color: #495057;
 }
 
+button {
+  color: #ffffff;
+  background: #2196F3;
+  border: 1px solid #2196F3;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.7;
+}
+

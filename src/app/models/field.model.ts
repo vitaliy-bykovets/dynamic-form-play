@@ -15,10 +15,15 @@ export class FieldAttribute {
   value: string | number | boolean;
 }
 
+export class FieldLayout {
+  columnSpan: number;
+}
+
 export class Field {
   type: FieldType;
   name: string;
   disabled?: boolean;
+  layout?: FieldLayout;
   classes?: string;
   id?: string;
   label?: string;

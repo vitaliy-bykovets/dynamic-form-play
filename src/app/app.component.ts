@@ -8,6 +8,7 @@ const structure: Field[] = [
     type: FieldType.input,
     validator: [Validators.required],
     name: 'password',
+    layout: { columnSpan: 2 },
     attrs: [
       { name: 'placeholder', value: 'Password'},
       { name: 'type', value: 'password'},
@@ -19,6 +20,7 @@ const structure: Field[] = [
     validator: [Validators.required],
     name: 'email',
     disabled: true,
+    layout: { columnSpan: 2 },
     attrs: [
       { name: 'placeholder', value: 'Username'}
     ]
@@ -98,12 +100,18 @@ export class AppComponent implements OnInit {
   structure$: Observable<Field[]>;
   data$: Observable<any>;
 
+  formValues: any;
+
   ngOnInit() {
     this.structure$ = of(structure);
     this.data$ = of(data);
   }
 
   updateForm(e) {
-    console.log('********* - 50', e)
+    this.formValues = e;
+  }
+
+  sendForm() {
+
   }
 }
